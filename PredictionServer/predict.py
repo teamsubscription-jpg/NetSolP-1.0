@@ -19,7 +19,7 @@ def get_preds_split(split_i, embed_dataloader, args, prediction_type, test_df):
     opts.intra_op_num_threads = args.NUM_THREADS
     opts.inter_op_num_threads = args.NUM_THREADS
     opts.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
-    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if torch.cuda.is_available() else ["CPUExecutionProvider"]
+    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if "CUDAExecutionProvider" in onnxruntime.get_available_providers() else ["CPUExecutionProvider"]
     
     # Adjust session options
     if args.MODEL_TYPE == "Both":
@@ -49,7 +49,7 @@ def run_model_distilled(embed_dataloader, args, prediction_type, test_df):
     opts.intra_op_num_threads = args.NUM_THREADS
     opts.inter_op_num_threads = args.NUM_THREADS
     opts.execution_mode = onnxruntime.ExecutionMode.ORT_SEQUENTIAL
-    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if torch.cuda.is_available() else ["CPUExecutionProvider"]
+    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if "CUDAExecutionProvider" in onnxruntime.get_available_providers() else ["CPUExecutionProvider"]
 
     # Adjust session options
     model_paths = [os.path.join(args.MODELS_PATH,

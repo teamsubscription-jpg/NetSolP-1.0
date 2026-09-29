@@ -1,0 +1,9 @@
+{
+  "input": {
+    "sequences": [
+      {"id": "Human leptin|WT", "sequence": "VPIQKVQDDTKTLIKTIVTRINDISHTQSVSSKQKVTGLDFIPGLHPILTLSKMDQTLAVYQQILTSMPSRNVIQISNDLENLRDLLHVLAFSKSCHLPWASGLETLDSLGGVLEASGYSTEVVALSRLQGSLQDMLWQLDLSPGC"}
+    ],
+    "model_type": "Distilled",
+    "prediction_type": "SU"
+  }
+}

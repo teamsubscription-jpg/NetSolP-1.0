@@ -1,0 +1,5 @@
+onnxruntime-gpu>=1.19,<2
+numpy
+pandas
+fair-esm
+runpod
